@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Rule of 100</title>
+</head>
+<body>
+
+    <nav>
+        <ul id="skill-list">
+            <li id="nav-title">SKILLS</li>
+            <!-- List of skills will be populated here -->
+            <li>skill 1</li>
+            <li>skill 2</li>
+            <li>skill 3</li>
+        </ul>
+    </nav>
+
+    <header>
+        <button class="skills-drawer" id="skills-drawer">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div>
+            <h1>Rule of 100</h1>
+        </div>
+        <button class="mode" id="light-dark">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+
+    <div contenteditable="true" id="editable-title">
+        click to name the skill.
+    </div>
+    
+    <div class="total" id="total">
+       <!-- Total time / Goal time -->
+    </div>
+    <div class="timer-container" >
+        <div id="timer" class="timer">
+            <ul class="current-time" id="current-time">
+                <li><span id="hours">00</span>hours</li>
+                <li><span id="minutes">00</span>minutes</li>
+                <li><span id="seconds">00</span>seconds</li>
+            </ul>
+            <div class="timer-buttons">
+                <button class="btn" id="check">
+                    <i class="fas fa-check" id="check-icon"></i>
+                </button>
+                <button class="btn" id="play-stop">
+                    <i class="fas fa-play" id="play-icon"></i>
+                </button>
+                <button class="btn" id="reset">
+                    <i class="fas fa-sync" id="reset-icon"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="session-container">
+        <div class="session-history">
+            <h2 id="history-title">Session History</h2>
+            <ul id="session-list">
+                <!-- Session list will be populated here-->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Session edit pop-up -->
+    <div class="edit-container" id="edit">
+        <div class="edit">
+            <button class="close-btn" id="close">
+                <i class="fas fa-times" id="close-icon"></i>
+            </button>
+            <div class="edit-header">
+                <h3>Edit Session</h3>
+            </div>
+            <div class="edit-content">
+                <form class="edit-form">
+                    <div>
+                        <label for="date">Date</label>
+                        <input type="date" id="input-date" class="form-input">
+                    </div>
+                    <div>
+                        <label for="time">Time</label>
+                        <input type="time" id="input-time" class="form-input">
+                    </div>
+                    <div>
+                        <label for="duration">Duration</label>
+                        <input 
+                            type="text" 
+                            id="input-duration" 
+                            placeholder="Enter Duration" 
+                            class="form-input"
+                            pattern="[0-9]{2}h [0-9]{2}m [0-9]{2}s" 
+                            inputmode="numeric"
+                            maxlength="9"
+                            >
+                    </div>
+                    <input type="submit" style="text-transform: uppercase;" value="Submit" class="submit-btn" id="submit">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
